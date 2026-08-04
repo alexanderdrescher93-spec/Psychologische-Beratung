@@ -1,17 +1,16 @@
+const menu = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.main-nav');
 
-const button = document.querySelector('.menu-button');
-const nav = document.querySelector('.navigation');
-
-if (button && nav) {
-  button.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    button.setAttribute('aria-expanded', String(open));
+if (menu && nav) {
+  menu.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    menu.setAttribute('aria-expanded', String(isOpen));
   });
 
-  nav.querySelectorAll('a').forEach(link => {
+  nav.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       nav.classList.remove('open');
-      button.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-expanded', 'false');
     });
   });
 }
