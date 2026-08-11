@@ -160,7 +160,7 @@ h1 {
   background-image:
     linear-gradient(90deg, var(--paper) 0%, rgba(246,241,233,.55) 12%, rgba(246,241,233,0) 35%),
     linear-gradient(0deg, rgba(41,49,46,.12), rgba(41,49,46,0) 38%),
-    url("stein-brandung.jpg?v=2");
+    url("stein-brandung.jpg");
   background-size: cover;
   background-position: 50% center;
 }
@@ -219,9 +219,16 @@ h1 {
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
+
+
+
 .topic-card {
-  min-height: 290px;
-  padding: 34px;
+  min-height: 330px;
+  padding: 34px 34px 38px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   background: rgba(255,253,249,.73);
   border: 1px solid rgba(89,98,78,.10);
   box-shadow: 0 12px 34px rgba(63,67,59,.05);
@@ -232,25 +239,34 @@ h1 {
   box-shadow: var(--shadow);
 }
 .topic-icon {
-  width: 52px;
-  height: 52px;
+  width: 112px;
+  height: 112px;
+  margin: 0 auto 8px;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(89,98,78,.30);
-  border-radius: 50%;
-  color: var(--sage-dark);
-  font-family: Georgia, serif;
-  font-size: 1.65rem;
+  color: #9a7454;
+}
+.topic-icon img {
+  width: 104px;
+  height: 104px;
+  display: block;
+  object-fit: contain;
 }
 .topic-card h3 {
-  margin: 42px 0 13px;
+  width: 100%;
+  max-width: 315px;
+  margin: 16px auto 14px;
+  text-align: center;
   font-family: Georgia, serif;
   font-size: 1.55rem;
   line-height: 1.2;
   font-weight: 400;
 }
 .topic-card p {
-  margin: 0;
+  width: 100%;
+  max-width: 315px;
+  margin: 0 auto;
+  text-align: center;
   color: var(--muted);
   font-size: .94rem;
 }
@@ -573,7 +589,7 @@ footer img {
     background-image:
       linear-gradient(180deg, var(--paper) 0%, rgba(246,241,233,0) 18%),
       linear-gradient(0deg, rgba(41,49,46,.14), rgba(41,49,46,0) 38%),
-      url("stein-brandung.jpg?v=2");
+      url("stein-brandung.jpg");
   }
   .hero-caption { right: 20px; bottom: 50px; }
   .topic-grid { grid-template-columns: 1fr; }
@@ -595,189 +611,38 @@ footer img {
 }
 
 
-/* =========================================================
-   Finale konsistente Typografie – gesamte Website
-   ========================================================= */
-
-:root {
-  --fs-body: clamp(1rem, .96rem + .15vw, 1.08rem);
-  --fs-small: .86rem;
-  --fs-eyebrow: .76rem;
-  --fs-h3: clamp(1.45rem, 1.32rem + .38vw, 1.72rem);
-  --fs-h2: clamp(2.35rem, 2rem + 1.05vw, 3.35rem);
-  --fs-hero: clamp(4rem, 3.1rem + 3.4vw, 7rem);
-  --lh-body: 1.68;
-  --lh-heading: 1.08;
-}
-
-html { font-size: 16px; }
-
-body {
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
-}
-
-/* Kleine Navigationselemente */
-.site-nav a,
-.eyebrow,
-.process-grid article > span {
-  font-size: var(--fs-eyebrow) !important;
-}
-
-.eyebrow {
-  line-height: 1.35 !important;
-  letter-spacing: .18em !important;
-}
-
-/* Hero */
-.hero-copy h1 {
-  font-size: var(--fs-hero) !important;
-  line-height: .96 !important;
-  letter-spacing: -.035em !important;
-}
-
-.hero-copy p {
-  font-size: clamp(1.05rem, 1rem + .18vw, 1.18rem) !important;
-  line-height: 1.62 !important;
-}
-
-/* Abschnittsüberschriften */
-.section-intro h2,
-.about-copy h2,
-.workshop-copy h2 {
-  font-size: var(--fs-h2) !important;
-  line-height: var(--lh-heading) !important;
-  letter-spacing: -.025em !important;
-}
-
-/* Fließtext */
-.section-intro p,
-.topic-card p,
-.workshop-copy p,
-.about-copy p,
-.process-grid p {
-  font-size: var(--fs-body) !important;
-  line-height: var(--lh-body) !important;
-}
-
-/* Themenkarten */
+/* Final centered module layout using the selected original icons */
 .topic-card {
-  min-height: 340px !important;
-  padding: 36px 34px 38px !important;
+  align-items: center !important;
+  text-align: center !important;
 }
-
-.topic-card h3 {
-  font-size: var(--fs-h3) !important;
-  line-height: 1.18 !important;
-  margin: 18px auto 14px !important;
-}
-
-.topic-card p {
-  max-width: 32ch !important;
+.topic-icon {
   margin-left: auto !important;
   margin-right: auto !important;
 }
-
-/* Ablauf */
-.process-grid article {
-  padding: 38px 38px 42px !important;
+.topic-card h3,
+.topic-card p {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
 }
 
+
+/* Korrigierte Größen im Bereich „Ablauf“ */
 .process-grid article > span {
   display: block !important;
-  margin: 0 0 32px !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 1rem !important;
+  line-height: 1 !important;
   font-weight: 500 !important;
   letter-spacing: .16em !important;
+  color: var(--sage-dark) !important;
+  transform: none !important;
 }
 
-.process-grid article h3 {
-  font-size: var(--fs-h3) !important;
-  line-height: 1.18 !important;
-  margin: 0 0 18px !important;
-}
-
-.process-grid article p {
-  max-width: 34ch !important;
-}
-
-/* Über mich – deutlich lesbarer, aber nicht überdimensioniert */
-.about-copy h2 {
-  max-width: 12ch !important;
-  margin-bottom: 30px !important;
-}
-
-.about-copy .about-lead {
-  max-width: 43ch !important;
-  margin-bottom: 28px !important;
-  font-size: clamp(1.08rem, 1.02rem + .22vw, 1.22rem) !important;
-  line-height: 1.62 !important;
-}
-
-.about-copy p:not(.eyebrow):not(.about-lead) {
-  max-width: 62ch !important;
-  margin-top: 0 !important;
-  margin-bottom: 20px !important;
-  font-size: clamp(1rem, .97rem + .12vw, 1.07rem) !important;
-  line-height: 1.72 !important;
-}
-
-/* Workshops */
-.workshop-copy p {
-  max-width: 58ch !important;
-}
-
-/* Buttons */
-.button,
-.btn,
-a[class*="button"] {
-  font-size: .96rem !important;
-  line-height: 1.2 !important;
-}
-
-/* Footer */
-footer,
-footer a {
-  font-size: .9rem !important;
-  line-height: 1.55 !important;
-}
-
-/* Tablet */
-@media (max-width: 900px) {
-  :root {
-    --fs-h2: clamp(2.15rem, 1.9rem + 1.5vw, 2.9rem);
-    --fs-hero: clamp(3.5rem, 2.8rem + 4vw, 5.2rem);
-  }
-
-  .about-copy h2 {
-    max-width: 15ch !important;
-  }
-
-  .process-grid article {
-    padding: 32px 30px 36px !important;
-  }
-}
-
-/* Smartphone */
-@media (max-width: 620px) {
-  :root {
-    --fs-body: 1rem;
-    --fs-h3: 1.42rem;
-    --fs-h2: clamp(2rem, 1.8rem + 1.8vw, 2.5rem);
-    --fs-hero: clamp(3rem, 2.4rem + 5vw, 4.2rem);
-  }
-
-  .topic-card,
-  .process-grid article {
-    padding: 30px 24px 32px !important;
-  }
-
-  .about-copy h2,
-  .about-copy .about-lead,
-  .about-copy p:not(.eyebrow) {
-    max-width: none !important;
-  }
-
-  .about-copy p:not(.eyebrow):not(.about-lead) {
-    margin-bottom: 18px !important;
-  }
+.process-grid article > h3 {
+  margin-top: 34px !important;
 }
